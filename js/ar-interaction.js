@@ -17,9 +17,10 @@ AFRAME.registerComponent("botones-interactivos", {
     // ---------------------------------------------------------
     const MAPA_BOTONES = {
       CUBE007_1: "https://www.instagram.com/digital.boost_mx/", // Redes sociales
-      CUBE006_1: "https://tu-sitio-web.com", // Sitio web
-      CUBE005_1: "https://tu-portafolio.com", // Portafolio
-      CUBE004_1: "https://tu-sitio.com/nosotros", // Nosotros
+      CUBE006_1: "https://digitalboostmx-three.vercel.app/", // Sitio web
+      CUBE005_1: "https://digitalboostmx-three.vercel.app/#proceso", // Nostros
+      CUBE004_1:
+        "https://www.canva.com/design/DAGrSIUVaR4/8Gpc0vlBA2lBBLm9aDoDjw/edit?utm_content=DAGrSIUVaR4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton", // Portafolio
     };
 
     // ---------------------------------------------------------
