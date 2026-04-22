@@ -1,5 +1,5 @@
 /* =========================================
-   VARIABLES GLOBALES Y RESET
+   STYLE-MAIN.CSS (Solo para index.html)
    ========================================= */
 :root {
   --bg-dark: #020108;
@@ -9,8 +9,11 @@
   --text-main: #ffffff;
   --text-muted: #a1a1aa;
 }
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 * {
@@ -24,30 +27,35 @@ body {
   color: var(--text-main);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
   line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
 }
 
 .container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
 
-/* =========================================
-   FONDO DINÁMICO (CANVAS)
-   ========================================= */
+/* Fondo Dinámico */
 #network-canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
 }
 
-/* =========================================
-   Navegación
-   ========================================= */
+/* Navegación y Botones */
 .glass-nav {
   position: fixed;
   top: 0;
@@ -58,7 +66,6 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   z-index: 100;
 }
-
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -67,7 +74,6 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
-
 .logo {
   display: flex;
   align-items: center;
@@ -76,13 +82,11 @@ body {
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
-
 .logo span {
   font-weight: 400;
   font-size: 0.8rem;
   color: var(--text-muted);
 }
-
 .logo-icon {
   width: 22px;
   height: 22px;
@@ -93,13 +97,11 @@ body {
   );
   border-radius: 6px;
 }
-
 .nav-links {
   display: flex;
   gap: 2.5rem;
   align-items: center;
 }
-
 .nav-links a {
   color: var(--text-main);
   text-decoration: none;
@@ -108,14 +110,10 @@ body {
   letter-spacing: 1.5px;
   transition: color 0.3s;
 }
-
 .nav-links a:hover {
   color: var(--primary-pink);
 }
 
-/* =========================================
-   BOTONES
-   ========================================= */
 .btn {
   padding: 12px 28px;
   border-radius: 30px;
@@ -128,31 +126,26 @@ body {
   display: inline-block;
   border: none;
 }
-
 .btn-primary {
   background: var(--text-main);
   color: var(--bg-dark);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
-
 .btn-primary:hover {
   background: var(--primary-pink);
   color: var(--text-main);
   box-shadow: 0 0 30px rgba(242, 113, 217, 0.5);
   transform: translateY(-2px);
 }
-
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--text-main);
   background: transparent;
 }
-
 .btn-outline:hover {
   border-color: var(--primary-purple);
   background: rgba(134, 70, 244, 0.1);
 }
-
 .mt-4 {
   margin-top: 1.5rem;
 }
@@ -162,10 +155,11 @@ body {
   padding: 16px;
   margin-top: 1rem;
 }
+.text-center {
+  text-align: center;
+}
 
-/* =========================================
-   ESTILOS COMPARTIDOS (GLASSMORPHISM)
-   ========================================= */
+/* Estilos Glassmorphism */
 .glass-panel {
   background: rgba(10, 10, 12, 0.6);
   backdrop-filter: blur(24px) saturate(150%);
@@ -175,7 +169,6 @@ body {
     0 40px 80px rgba(0, 0, 0, 0.8),
     inset 0 0 10px rgba(255, 255, 255, 0.01);
 }
-
 .glass-panel-sm {
   background: rgba(10, 10, 12, 0.8);
   backdrop-filter: blur(16px);
@@ -186,11 +179,9 @@ body {
     transform 0.3s ease,
     border-color 0.3s ease;
 }
-
 .glass-panel-sm:hover {
   border-color: rgba(134, 70, 244, 0.4);
 }
-
 .badge {
   display: inline-block;
   padding: 6px 16px;
@@ -202,7 +193,6 @@ body {
   color: var(--primary-pink);
   margin-bottom: 2.5rem;
 }
-
 .text-gradient {
   background: linear-gradient(
     90deg,
@@ -213,27 +203,20 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.text-center {
-  text-align: center;
-}
-
-/* =========================================
-   SECCIÓN 1: HERO
-   ========================================= */
+/* Hero */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
 }
-
 .hero-content {
   padding: 5rem 4rem;
   max-width: 900px;
   text-align: center;
 }
-
 .hero-content h1 {
   font-size: 5rem;
   font-weight: 800;
@@ -241,7 +224,6 @@ body {
   margin-bottom: 1.5rem;
   letter-spacing: -2px;
 }
-
 .hero-content p {
   font-size: 1.15rem;
   color: var(--text-muted);
@@ -251,15 +233,12 @@ body {
   margin-right: auto;
 }
 
-/* =========================================
-   SECCIÓN 2: SOLUCIONES (Y SVGs)
-   ========================================= */
+/* Soluciones (🔥 FIX APLICADO AQUÍ 🔥) */
 .solutions-section {
   padding: 8rem 0;
   position: relative;
   z-index: 10;
 }
-
 .solutions-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -267,34 +246,39 @@ body {
   align-items: stretch;
 }
 
+/* Corrección de alineación estricta para escritorio */
 .solutions-content {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 2rem;
+  width: 100%;
 }
-
+.solutions-content .glass-panel-sm {
+  width: 100% !important;
+  margin: 0 !important;
+}
 .solutions-content .glass-panel-sm:hover {
   transform: translateY(-5px);
 }
-
 .solutions-content h3 {
   font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: var(--text-main);
 }
-
 .solutions-content p {
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
-/* Íconos SVG */
+/* El SVG fantasma bloqueado para no romper la grilla */
 .svg-defs {
   position: absolute;
   width: 0;
   height: 0;
+  overflow: hidden;
 }
 .custom-icon {
   width: 50px;
@@ -313,7 +297,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .solutions-3d {
   display: flex;
   align-items: center;
@@ -322,22 +305,18 @@ body {
   padding: 0;
 }
 
-/* =========================================
-   SECCIÓN 3: DEMO AR (HUD)
-   ========================================= */
+/* Demo AR (Mockup del Index) */
 .ar-section {
   padding: 6rem 0;
   position: relative;
   z-index: 10;
 }
-
 .ar-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 4rem;
   align-items: center;
 }
-
 .ar-info h2 {
   font-size: 3.5rem;
   font-weight: 800;
@@ -363,8 +342,6 @@ body {
   background: var(--primary-pink);
   box-shadow: 0 0 10px var(--primary-pink);
 }
-
-/* HUD Visor */
 .scanner-frame {
   position: relative;
   width: 100%;
@@ -378,7 +355,6 @@ body {
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.02);
 }
-
 .corner {
   position: absolute;
   width: 40px;
@@ -412,7 +388,6 @@ body {
   height: 50px;
   border-color: var(--primary-pink);
 }
-
 .scanner-idle {
   text-align: center;
   display: flex;
@@ -430,15 +405,8 @@ body {
   color: var(--text-muted);
   letter-spacing: 1px;
 }
-.ar-view-hidden {
-  display: none;
-  width: 100%;
-  height: 100%;
-}
 
-/* =========================================
-   SECCIÓN 4: PROCESO (TIMELINE)
-   ========================================= */
+/* Timeline, IA, Contacto, Footer, etc. (Tu diseño original) */
 .process-section {
   padding: 6rem 0;
   position: relative;
@@ -450,7 +418,6 @@ body {
   margin: 1rem auto 4rem auto;
   font-size: 1.1rem;
 }
-
 .timeline-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -474,7 +441,6 @@ body {
   box-shadow: 0 0 15px var(--primary-purple);
   opacity: 0.6;
 }
-
 .timeline-step {
   position: relative;
   padding: 2.5rem 2rem;
@@ -486,7 +452,6 @@ body {
     0 15px 30px rgba(0, 0, 0, 0.8),
     inset 0 0 15px rgba(242, 113, 217, 0.05);
 }
-
 .step-number {
   font-size: 3.5rem;
   font-weight: 800;
@@ -505,9 +470,6 @@ body {
   color: var(--text-muted);
 }
 
-/* =========================================
-   SECCIÓN 5: CONTACTO
-   ========================================= */
 .contact-section {
   padding: 6rem 0;
   position: relative;
@@ -532,7 +494,6 @@ body {
   color: var(--text-muted);
   margin-bottom: 0;
 }
-
 .contact-form form {
   display: flex;
   flex-direction: column;
@@ -552,10 +513,6 @@ body {
   transition: all 0.3s ease;
   resize: vertical;
 }
-.input-group input::placeholder,
-.input-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.3);
-}
 .input-group input:focus,
 .input-group textarea:focus {
   border-color: var(--primary-pink);
@@ -563,9 +520,6 @@ body {
   box-shadow: 0 0 15px rgba(242, 113, 217, 0.2);
 }
 
-/* =========================================
-   FOOTER Y REDES SOCIALES
-   ========================================= */
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 6rem 0 2rem 0;
@@ -577,7 +531,6 @@ body {
     transparent 50%
   );
 }
-
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -609,8 +562,6 @@ body {
 .footer-links a:hover {
   color: var(--primary-pink);
 }
-
-/* Íconos SVG Redes */
 .social-link {
   display: flex;
   align-items: center;
@@ -633,7 +584,6 @@ body {
   filter: drop-shadow(0 0 8px rgba(242, 113, 217, 0.6));
   transform: scale(1.1);
 }
-
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 2rem;
@@ -644,9 +594,281 @@ body {
   font-size: 0.8rem;
 }
 
-/* =========================================
-   MEDIA QUERIES (RESPONSIVIDAD MÓVIL)
-   ========================================= */
+.vr-banner-section {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 10;
+}
+.vr-banner {
+  padding: 4rem;
+  text-align: center;
+  background: radial-gradient(
+    circle at center,
+    rgba(134, 70, 244, 0.15) 0%,
+    rgba(10, 10, 12, 0.8) 70%
+  );
+  border-color: rgba(242, 113, 217, 0.3);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(134, 70, 244, 0.1);
+}
+.vr-banner-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.vr-banner-content h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+.vr-banner-content p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.ia-section {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 10;
+}
+.ia-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.ia-info h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.ia-info p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+.ia-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.ia-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.ia-feature-item:hover {
+  border-color: rgba(134, 70, 244, 0.3);
+  background: rgba(134, 70, 244, 0.05);
+}
+.feature-icon-sm {
+  width: 45px;
+  height: 45px;
+  background: rgba(242, 113, 217, 0.05);
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(242, 113, 217, 0.2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.feature-icon-sm svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 5px rgba(242, 113, 217, 0.4));
+  transition: filter 0.3s ease;
+}
+.ia-feature-item:hover .feature-icon-sm {
+  background: rgba(134, 70, 244, 0.1);
+  border-color: rgba(134, 70, 244, 0.4);
+  transform: scale(1.1);
+}
+.ia-feature-item:hover .feature-icon-sm svg {
+  filter: drop-shadow(0 0 10px rgba(134, 70, 244, 0.7));
+}
+.ia-feature-item h4 {
+  color: var(--text-main);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+.ia-feature-item p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+.ai-interface {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1rem;
+}
+.ai-status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-pink);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary-pink);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(242, 113, 217, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(242, 113, 217, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(242, 113, 217, 0);
+  }
+}
+.ai-chat-window {
+  min-height: 120px;
+  padding: 1rem 0;
+}
+.ai-message {
+  display: flex;
+  gap: 15px;
+}
+.ai-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple),
+    var(--primary-pink)
+  );
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-shrink: 0;
+}
+.ai-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+.ai-text {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 0 12px 12px 12px;
+  border: 1px solid rgba(134, 70, 244, 0.2);
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  width: 100%;
+}
+.ai-prompt-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #020105;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 30px;
+}
+.prompt-bar {
+  flex-grow: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.prompt-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--primary-purple),
+    var(--primary-pink)
+  );
+  animation: loadingBar 3s ease-in-out infinite;
+}
+@keyframes loadingBar {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    float: right;
+  }
+}
+.prompt-action {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-pink);
+  letter-spacing: 1px;
+}
+
+/* Bloqueo Táctil 3D Desktop */
+#vr-container canvas.a-canvas {
+  pointer-events: none !important;
+  touch-action: pan-y !important;
+}
+
+/* Alert Cyber */
+.cyber-alert-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 1, 5, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+}
+.cyber-alert-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 40px;
+  border: 1px solid var(--primary-pink);
+  box-shadow: 0 0 20px rgba(242, 113, 217, 0.2);
+}
+.alert-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px var(--primary-pink));
+}
+.cyber-alert-content h3 {
+  color: var(--text-main);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+.cyber-alert-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+/* Media Queries Landing Page */
 @media (max-width: 1024px) {
   .timeline-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -655,7 +877,6 @@ body {
     display: none;
   }
 }
-
 @media (max-width: 992px) {
   .glass-panel h1 {
     font-size: 3.8rem;
@@ -671,7 +892,6 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 @media (max-width: 768px) {
   .nav-container {
     flex-wrap: wrap;
@@ -681,7 +901,6 @@ body {
   .nav-links a:not(.btn) {
     display: none;
   }
-
   .hero {
     height: auto;
     min-height: 100vh;
@@ -700,13 +919,10 @@ body {
     font-size: 0.95rem;
     margin-bottom: 2rem;
   }
-
-  /* Fix móvil: evita que los paneles queden pegados al borde lateral */
   .solutions-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
-
   .solutions-grid {
     grid-template-columns: 1fr;
   }
@@ -720,7 +936,6 @@ body {
   .solutions-3d {
     min-height: 350px;
   }
-
   .ar-grid,
   .contact-glass {
     grid-template-columns: 1fr;
@@ -729,449 +944,51 @@ body {
   .contact-glass {
     padding: 2rem 1.5rem;
   }
-
   .timeline-grid {
     grid-template-columns: 1fr;
   }
   .footer-grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* =========================================
-   SECCIÓN BANNER SHOWROOM VR
-   ========================================= */
-.vr-banner-section {
-  padding: 4rem 0;
-  position: relative;
-  z-index: 10;
-}
-
-.vr-banner {
-  padding: 4rem;
-  text-align: center;
-  background: radial-gradient(
-    circle at center,
-    rgba(134, 70, 244, 0.15) 0%,
-    rgba(10, 10, 12, 0.8) 70%
-  );
-  border-color: rgba(242, 113, 217, 0.3); /* Borde rosado sutil */
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.5),
-    inset 0 0 20px rgba(134, 70, 244, 0.1);
-}
-
-.vr-banner-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.vr-banner-content h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-}
-
-.vr-banner-content p {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-/* Responsividad para el Banner VR */
-@media (max-width: 768px) {
   .vr-banner {
     padding: 3rem 1.5rem;
   }
   .vr-banner-content h2 {
     font-size: 2.2rem;
   }
-}
-
-/* =========================================
-   SECCIÓN INTELIGENCIA ARTIFICIAL
-   ========================================= */
-.ia-section {
-  padding: 6rem 0;
-  position: relative;
-  z-index: 10;
-}
-
-.ia-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-
-.ia-info h2 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.ia-info p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  margin-bottom: 2rem;
-}
-
-/* Lista de características IA */
-.ia-feature-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.ia-feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  transition:
-    border-color 0.3s,
-    background 0.3s;
-}
-
-.ia-feature-item:hover {
-  border-color: rgba(134, 70, 244, 0.3);
-  background: rgba(134, 70, 244, 0.05);
-}
-
-/* Estilos actualizados para los íconos pequeños de IA */
-.feature-icon-sm {
-  width: 45px;
-  height: 45px;
-  background: rgba(242, 113, 217, 0.05);
-  padding: 10px;
-  border-radius: 12px;
-  border: 1px solid rgba(242, 113, 217, 0.2);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.feature-icon-sm svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 5px rgba(242, 113, 217, 0.4));
-  transition: filter 0.3s ease;
-}
-
-/* Efecto Hover para que el ícono brille y cambie a morado */
-.ia-feature-item:hover .feature-icon-sm {
-  background: rgba(134, 70, 244, 0.1);
-  border-color: rgba(134, 70, 244, 0.4);
-  transform: scale(1.1);
-}
-
-.ia-feature-item:hover .feature-icon-sm svg {
-  filter: drop-shadow(0 0 10px rgba(134, 70, 244, 0.7));
-}
-
-.ia-feature-item h4 {
-  color: var(--text-main);
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-}
-
-.ia-feature-item p {
-  font-size: 0.85rem;
-  margin-bottom: 0;
-}
-
-/* Interfaz UI Simulada de IA */
-.ai-interface {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.ai-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding-bottom: 1rem;
-}
-
-.ai-status-dot {
-  width: 10px;
-  height: 10px;
-  background-color: var(--primary-pink);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--primary-pink);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(242, 113, 217, 0.7);
+  #vr-container,
+  #vr-container a-scene {
+    touch-action: pan-y !important;
+    overscroll-behavior: contain;
   }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(242, 113, 217, 0);
+  .solutions-content .glass-panel-sm:hover {
+    transform: none;
   }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(242, 113, 217, 0);
+  .solution-item:hover .custom-icon {
+    transform: none;
+    filter: drop-shadow(0 0 10px rgba(242, 113, 217, 0.3));
   }
 }
-
-.ai-chat-window {
-  min-height: 120px;
-  padding: 1rem 0;
-}
-
-.ai-message {
-  display: flex;
-  gap: 15px;
-}
-
-.ai-avatar {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-purple),
-    var(--primary-pink)
-  );
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  flex-shrink: 0;
-}
-
-.ai-avatar svg {
-  width: 20px;
-  height: 20px;
-}
-
-.ai-text {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 1rem;
-  border-radius: 0 12px 12px 12px;
-  border: 1px solid rgba(134, 70, 244, 0.2);
-  font-family: monospace;
-  font-size: 0.9rem;
-  color: var(--text-main);
-  line-height: 1.5;
-  width: 100%;
-}
-
-/* Caja de Prompt animada */
-.ai-prompt-box {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #020105;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px 20px;
-  border-radius: 30px;
-}
-
-.prompt-bar {
-  flex-grow: 1;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.prompt-progress {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--primary-purple),
-    var(--primary-pink)
-  );
-  animation: loadingBar 3s ease-in-out infinite;
-}
-
-@keyframes loadingBar {
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-    float: right;
-  }
-}
-
-.prompt-action {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--primary-pink);
-  letter-spacing: 1px;
-}
-
-/* =========================================
-   PARCHE AR.JS — CONTENCIÓN VISUAL ESTRICTA
-   -----------------------------------------
-   PROBLEMA ORIGINAL: Las reglas globales
-   "video, .a-canvas { position: absolute }"
-   rompían cualquier <video> del resto de la
-   página. Este bloque las reemplaza con
-   selectores 100% encadenados a #ar-view.
-   ========================================= */
-
-/* 1. Contenedor principal: es el nuevo viewport del AR */
-#ar-view {
-  position: relative; /* Containing block para hijos absolute */
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* Corta todo lo que desborde */
-  border-radius: inherit; /* Hereda border-radius del .scanner-frame */
-  background: #000;
-}
-
-/* Clase de reset cuando la cámara está inactiva */
-.ar-view-hidden {
-  display: none !important;
-  width: 100%;
-  height: 100%;
-}
-
-/* 2. La escena A-Frame vive DENTRO del contenedor gracias al atributo
-      "embedded" en <a-scene>. Este CSS la ancla al 100% del contenedor. */
-#ar-view a-scene {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* 3. Canvas de Three.js (render 3D) — encadenado al contenedor */
-#ar-view canvas.a-canvas {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 2;
-}
-
-/* 4. Feed de cámara (video) — AR.js lo inyecta en <body> con
-      position:fixed. El JS lo mueve a #ar-view; este CSS lo ancla
-      correctamente una vez dentro del contenedor. */
-#ar-view video {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  margin: 0 !important;
-  z-index: 1;
-}
-
-/* 5. AR.js añade overflow:hidden y position:fixed al <body>.
-      Esto revierte ese comportamiento para que el scroll de la
-      landing page no quede bloqueado después de usar el AR. */
-body.a-body-loaded {
-  overflow: auto !important;
-  position: static !important;
-}
-
-/* 6. Overlay de carga mientras inicializa la escena AR */
-.ar-loading-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  z-index: 20; /* Por encima del video y canvas */
-  background: rgba(2, 1, 8, 0.88);
-  backdrop-filter: blur(4px);
-  pointer-events: none; /* No bloquea clics debajo */
-  border-radius: inherit;
-}
-
-.ar-loading-overlay span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
-
-/* Spinner neon */
-.ar-spinner {
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgba(242, 113, 217, 0.15);
-  border-top-color: var(--primary-pink);
-  border-radius: 50%;
-  animation: ar-spin 0.9s linear infinite;
-}
-
-@keyframes ar-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Asegurar que el marco del escáner sea el stacking context correcto */
-.scanner-frame {
-  position: relative;
-  z-index: 1; /* Por encima del fondo de sección */
-  isolation: isolate; /* Crea un nuevo stacking context aislado */
-}
-
-/* =========================================
-   FIX MÓVIL EXCELSO - REINICIO DE ESCALA (MÓVILES)
-   ========================================= */
 @media (max-width: 480px) {
   html {
     font-size: 14px;
   }
-
-  body {
-    overflow-x: hidden;
-  }
-
-  /* Ajustes en la Hero Section */
   .hero-content {
     padding: 2.5rem 1.2rem;
     width: 100%;
     margin: 0 auto;
   }
-
   .hero-content h1 {
     font-size: 2.5rem;
     letter-spacing: -1px;
     line-height: 1.2;
     margin-bottom: 1rem;
   }
-
   .hero-content p {
     font-size: 1rem;
     padding: 0 10px;
     margin-bottom: 2rem;
   }
-
-  /* Reducción de rellenos en contenedores para ganar espacio */
   .glass-panel,
   .glass-panel-sm,
   .contact-glass,
@@ -1180,8 +997,6 @@ body.a-body-loaded {
     border-radius: 20px;
     width: 100%;
   }
-
-  /* Ajuste de tipografía de títulos en todas las secciones */
   h2,
   .ar-info h2,
   .ia-info h2,
@@ -1191,109 +1006,31 @@ body.a-body-loaded {
     line-height: 1.2;
     margin-bottom: 1rem;
   }
-
-  /* Botones 100% de ancho y apilados en móvil */
   .btn-group {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-
   .btn {
     width: 100%;
     text-align: center;
     padding: 14px;
   }
-
-  /* Ajustes de la grilla de IA para pantallas pequeñas */
   .ia-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-
-  /* Pasos del Timeline más compactos */
   .timeline-step {
     padding: 1.5rem;
   }
-
   .step-number {
     font-size: 2.5rem;
   }
-
-  /* Footer centrado */
   .footer-grid {
     text-align: center;
     gap: 2rem;
   }
-
   .social-link {
     justify-content: center;
   }
-}
-
-/* Bloquea los eventos táctiles en el motor 3D decorativo para que no interrumpa el scroll ni lance errores */
-#vr-container canvas.a-canvas {
-  pointer-events: none !important;
-  touch-action: pan-y !important;
-}
-
-/* Fix móvil: A-Frame captura touch en el wrapper <a-scene>, causando zoom involuntario.
-   Limitamos los gestos a solo scroll vertical en el contenedor y la escena. */
-@media (max-width: 768px) {
-  #vr-container,
-  #vr-container a-scene {
-    touch-action: pan-y !important;
-    overscroll-behavior: contain;
-  }
-
-  /* Los hover-transforms en las cards de soluciones se disparan con el primer
-     tap en móvil; el browser puede interpretar el cambio de transform como
-     un evento de escala del viewport. Los desactivamos en touch. */
-  .solutions-content .glass-panel-sm:hover {
-    transform: none;
-  }
-  .solution-item:hover .custom-icon {
-    transform: none;
-    filter: drop-shadow(0 0 10px rgba(242, 113, 217, 0.3));
-  }
-}
-
-/* Overlay que oscurece el fondo */
-.cyber-alert-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(2, 1, 5, 0.85);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  padding: 20px;
-}
-
-/* El cuadro del mensaje */
-.cyber-alert-content {
-  text-align: center;
-  max-width: 400px;
-  padding: 40px;
-  border: 1px solid var(--primary-pink);
-  box-shadow: 0 0 20px rgba(242, 113, 217, 0.2);
-}
-
-.alert-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 10px var(--primary-pink));
-}
-
-.cyber-alert-content h3 {
-  color: var(--text-main);
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-}
-
-.cyber-alert-content p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 25px;
 }
