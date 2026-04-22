@@ -52,6 +52,51 @@
         align-items: center;
         background: linear-gradient(to bottom, rgba(2, 1, 5, 0.8), transparent);
       }
+
+      /* ─── Fix móvil: evita que el logo escamado se empalme con el botón ─── */
+      @media (max-width: 600px) {
+        .ar-header {
+          padding: 14px 16px;
+          gap: 10px;
+        }
+
+        /* El contenedor del logo se convierte en un bloque flex limitado;
+           overflow:hidden recorta el overflow visual del transform sin
+           alterar el botón de la derecha. */
+        .ar-header .logo {
+          flex: 1 1 auto;
+          min-width: 0;
+          overflow: hidden;
+        }
+
+        /* Reducimos la escala para que encaje en el espacio disponible.
+           !important es necesario para sobrescribir el inline-style. */
+        .ar-header .logo img {
+          height: 42px !important;
+          transform: scale(1.8) !important;
+          transform-origin: left center;
+        }
+
+        /* El botón no se encoge, mantiene su forma y texto legible. */
+        .ar-header .btn {
+          flex-shrink: 0;
+          white-space: nowrap;
+          font-size: 0.65rem !important;
+          padding: 7px 14px !important;
+        }
+      }
+
+      /* ─── Fix bordes del escáner: .scanner-frame hereda de style.css estilos
+         pensados para el HUD demo del index (height:450px, background oscuro,
+         border-radius, overflow:hidden). Aquí lo convertimos en un overlay
+         transparente de pantalla completa donde solo las esquinas son visibles. ─── */
+      .ar-standalone .scanner-frame {
+        height: 100% !important; /* full-screen, no 450px */
+        background: transparent !important; /* la cámara debe verse detrás */
+        border: none !important; /* sin borde de caja */
+        border-radius: 0 !important; /* sin redondeo que distorsiona esquinas */
+        overflow: visible !important; /* las corners no se recortan */
+      }
     </style>
   </head>
   <body>
@@ -63,7 +108,13 @@
           <img
             src="assets/tarjeta/DB isotipo.png"
             alt="Digital Boost MX"
-            style="height: 40px; width: auto; object-fit: contain"
+            style="
+              height: 80px;
+              width: auto;
+              object-fit: contain;
+              transform: scale(3.5);
+              transform-origin: left center;
+            "
           />
         </div>
         <a

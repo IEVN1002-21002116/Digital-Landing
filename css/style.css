@@ -701,8 +701,18 @@ body {
     margin-bottom: 2rem;
   }
 
+  /* Fix móvil: evita que los paneles queden pegados al borde lateral */
+  .solutions-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   .solutions-grid {
     grid-template-columns: 1fr;
+  }
+  .solutions-content {
+    width: 100%;
+    min-width: 0;
   }
   .glass-panel-sm {
     padding: 1.5rem;
@@ -1225,4 +1235,65 @@ body.a-body-loaded {
 #vr-container canvas.a-canvas {
   pointer-events: none !important;
   touch-action: pan-y !important;
+}
+
+/* Fix móvil: A-Frame captura touch en el wrapper <a-scene>, causando zoom involuntario.
+   Limitamos los gestos a solo scroll vertical en el contenedor y la escena. */
+@media (max-width: 768px) {
+  #vr-container,
+  #vr-container a-scene {
+    touch-action: pan-y !important;
+    overscroll-behavior: contain;
+  }
+
+  /* Los hover-transforms en las cards de soluciones se disparan con el primer
+     tap en móvil; el browser puede interpretar el cambio de transform como
+     un evento de escala del viewport. Los desactivamos en touch. */
+  .solutions-content .glass-panel-sm:hover {
+    transform: none;
+  }
+  .solution-item:hover .custom-icon {
+    transform: none;
+    filter: drop-shadow(0 0 10px rgba(242, 113, 217, 0.3));
+  }
+}
+
+/* Overlay que oscurece el fondo */
+.cyber-alert-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 1, 5, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+/* El cuadro del mensaje */
+.cyber-alert-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 40px;
+  border: 1px solid var(--primary-pink);
+  box-shadow: 0 0 20px rgba(242, 113, 217, 0.2);
+}
+
+.alert-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px var(--primary-pink));
+}
+
+.cyber-alert-content h3 {
+  color: var(--text-main);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.cyber-alert-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
 }

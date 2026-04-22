@@ -22,9 +22,19 @@
     <nav class="glass-nav">
       <div class="nav-container">
         <div class="logo">
-          <div class="logo-icon"></div>
-          DIGITAL BOOST <span>MX</span>
+          <img
+            src="assets/tarjeta/DB isotipo.png"
+            alt="Digital Boost MX"
+            style="
+              height: 80px;
+              width: auto;
+              object-fit: contain;
+              transform: scale(3.5);
+              transform-origin: left center;
+            "
+          />
         </div>
+
         <div class="nav-links">
           <a href="#soluciones">SOLUCIONES</a>
           <a href="#ia-module">IA</a>
@@ -153,7 +163,6 @@
               </p>
             </div>
           </div>
-
           <div class="solutions-3d glass-panel-sm">
             <div
               id="vr-container"
@@ -464,25 +473,59 @@
             </p>
           </div>
           <div class="contact-form">
-            <form action="#" method="POST">
+            <form
+              id="form-contacto"
+              action="https://formspree.io/f/meevrrlz"
+              method="POST"
+            >
               <div class="input-group">
-                <input type="text" placeholder="Nombre completo" required />
+                <input
+                  type="text"
+                  name="nombre"
+                  placeholder="Nombre completo"
+                  required
+                />
               </div>
               <div class="input-group">
-                <input type="email" placeholder="Correo electrónico" required />
+                <input
+                  type="email"
+                  name="_replyto"
+                  placeholder="Correo electrónico"
+                  required
+                />
               </div>
               <div class="input-group">
                 <textarea
+                  name="mensaje"
                   rows="4"
                   placeholder="Cuéntanos brevemente sobre tu proyecto..."
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary w-100">
+
+              <button
+                type="submit"
+                id="btn-enviar"
+                class="btn btn-primary w-100"
+              >
                 ENVIAR MENSAJE
               </button>
             </form>
           </div>
+        </div>
+      </div>
+
+      <div id="cyber-alert" class="cyber-alert-overlay" style="display: none">
+        <div class="cyber-alert-content glass-panel">
+          <div class="alert-icon">🚀</div>
+          <h3>¡MENSAJE RECIBIDO!</h3>
+          <p>
+            Tu transformación digital ha comenzado. Nos pondremos en contacto
+            contigo pronto.
+          </p>
+          <button onclick="cerrarAlert()" class="btn btn-primary">
+            ENTENDIDO
+          </button>
         </div>
       </div>
     </section>
@@ -503,6 +546,7 @@
           <div class="footer-links">
             <h4>UBICACIÓN</h4>
             <p class="footer-text">León, Guanajuato, México</p>
+            <p class="footer-text">Baja California Sur, La Paz, México</p>
             <p class="footer-text">Consultoría global remota</p>
           </div>
           <div class="footer-links">
@@ -512,7 +556,10 @@
           </div>
           <div class="footer-links">
             <h4>REDES</h4>
-            <a href="#" class="social-link">
+            <a
+              href="https://www.instagram.com/digital.boost_mx/"
+              class="social-link"
+            >
               <svg
                 class="social-icon"
                 viewBox="0 0 24 24"
@@ -530,25 +577,7 @@
               </svg>
               Instagram
             </a>
-            <a href="#" class="social-link">
-              <svg
-                class="social-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                ></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-              LinkedIn
-            </a>
-            <a href="#" class="social-link">
+            <a href="https://canva.link/ka21jn2dnbw1ze8" class="social-link">
               <svg
                 class="social-icon"
                 viewBox="0 0 24 24"
@@ -576,5 +605,6 @@
     <script src="js/background-engine.js"></script>
     <script src="js/glass-material.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/form-handler.js"></script>
   </body>
 </html>
